@@ -1,0 +1,154 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+    id 'kotlin-parcelize'
+}
+
+android {
+    compileSdk 32
+    buildToolsVersion "30.0.3"
+
+    buildFeatures {
+        viewBinding = true
+    }
+
+    defaultConfig {
+        applicationId "com.example.myfavoritewebsites"
+        minSdk 23
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    productFlavors {
+        dev {
+            applicationId "com.example.myfavoritewebsites.dev"
+            minSdkVersion 24
+            targetSdkVersion 30
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            versionCode 1
+            versionName '1.0'
+        }
+        prod {
+            applicationId "com.example.myfavoritewebsites.prod"
+            minSdkVersion 24
+            targetSdkVersion 30
+            testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+            versionCode 1
+            versionName '1.0'
+        }
+    }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    flavorDimensions 'software'
+}
+
+kapt {
+    correctErrorTypes = true
+}
+
+dependencies {
+
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+
+    // support libraries
+
+    implementation "androidx.activity:activity-ktx:$activityVersion"
+
+    implementation "androidx.appcompat:appcompat:1.4.0"
+    //implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation "com.google.android.material:material:1.4.0"
+    //implementation 'com.google.android.material:material:1.5.0'
+    implementation "androidx.constraintlayout:constraintlayout:2.1.2"
+    implementation 'androidx.constraintlayout:constraintlayout:2.1.3'
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation "androidx.fragment:fragment-ktx:$fragmentKtxVersion"
+
+    implementation "androidx.legacy:legacy-support-v4:$supportVersion"
+    implementation "androidx.cardview:cardview:$supportVersion"
+    implementation "androidx.recyclerview:recyclerview:$supportVersion"
+    implementation "androidx.palette:palette-ktx:$supportVersion"
+    implementation "androidx.dynamicanimation:dynamicanimation:$supportVersion"
+    implementation "androidx.core:core-ktx:$ktxVersion"
+    //implementation 'androidx.core:core-ktx:1.7.0'
+
+
+    //Architecture components
+    implementation "androidx.lifecycle:lifecycle-extensions:$archVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$archVersion"
+
+    //dagger hilt
+    implementation 'com.google.dagger:hilt-android:2.40.5'
+    kapt 'com.google.dagger:hilt-compiler:2.40.5'
+
+    // For instrumentation tests
+    androidTestImplementation 'com.google.dagger:hilt-android-testing:2.40.5'
+    kaptAndroidTest 'com.google.dagger:hilt-compiler:2.40.5'
+
+    // For local unit tests
+    testImplementation 'com.google.dagger:hilt-android-testing:2.40.5'
+    kaptTest 'com.google.dagger:hilt-compiler:2.40.5'
+
+
+    //implementation "androidx.hilt:hilt-work:1.0.0-alpha01"
+
+    //Rxjava
+    implementation "io.reactivex.rxjava2:rxjava:2.0.3"
+    implementation "io.reactivex.rxjava2:rxandroid:2.1.1"
+    implementation "com.jakewharton.rxrelay2:rxrelay:2.1.0"
+    implementation "io.reactivex.rxjava2:rxkotlin:2.3.0"
+
+    //Network
+    implementation "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    implementation "com.google.code.gson:gson:$gsonVersion"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofitVersion"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:$rxJava2Adapter"
+    implementation "com.squareup.okhttp3:logging-interceptor:$loginInterceptor"
+
+    //Glide
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+
+    //airbnb
+    implementation("com.airbnb.android:lottie:3.1.0")
+    //swipe
+    implementation "com.daimajia.swipelayout:library:$swipeLayout"
+
+    //Retrofit
+    implementation "com.squareup.retrofit2:retrofit:2.6.1"
+    implementation "com.squareup.retrofit2:converter-gson:2.6.1"
+    implementation "com.google.code.gson:gson:2.8.1"
+    implementation "com.jakewharton.retrofit:retrofit2-rxjava2-adapter:1.0.0"
+    implementation "com.squareup.okhttp3:logging-interceptor:3.9.0"
+
+    //Texting
+    testImplementation "junit:junit:$jUnit"
+    testImplementation "org.hamcrest:java-hamcrest:$hamcrestVersion"
+    testImplementation "org.assertj:assertj-core:$assertJVersion"
+    testImplementation "org.mockito:mockito-core:$mockitoVersion"
+    testImplementation "com.haarman.mockitokotlin2:mockito-kotlin:$mockitokotlin2Version"
+    testImplementation "androidx.arch.core:core-testing:$testArchCoreVersion"
+    androidTestImplementation "android.text.ext:junit:$jUnitExt"
+    androidTestImplementation "android.text.expresso:expresso-core:$expresso"
+    testImplementation "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion"
+    androidTestImplementation "org.mockito:mockito-android:$mockitoVersion"
+}

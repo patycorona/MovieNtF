@@ -1,0 +1,91 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+plugins {
+    id 'com.android.application' version '8.0.2' apply false
+    id 'com.android.library' version '8.0.2' apply false
+    id 'org.jetbrains.kotlin.android' version '1.7.20' apply false
+    id 'com.google.dagger.hilt.android' version "2.44" apply false
+}
+
+
+ext {
+    //Support Libraries
+
+    activityVersion = '1.7.2'
+    appCompatVersion = '1.6.1'
+    materialVersion = '1.5.0'//'1.9.0'
+    googlegms = '18.1.0'
+    constraintLayoutVersion = '2.1.4'
+
+    firebaseAnalytics = '21.3.0'
+    firebaseMessaging = '23.2.0'
+    jetbrainsKotlin = '1.8.20'
+
+    supportVersion = '1.0.0'
+    recyclerview = '1.3.1'
+    coreKtx= '1.8.0'//'1.10.1'
+    coil = "2.4.0"
+
+    //Architecture components
+    lifeExtensions = '2.2.0'
+    lifeVersion = '2.6.1'
+
+    //dagger hilt
+    daggerHilt = '2.47'
+    drawerlayout  = '1.2.0'
+    fragmentktx = '1.6.1'
+
+    //data store
+    dataStore ='1.0.0'
+
+    //Courutines
+    kotlinxCoroutines = '1.6.4'
+
+    //For instrumentation tests
+    daggerHiltApp = '2.40.5'
+    daggerHiltCompiler = '2.47'
+    extJUnit = '1.1.5'
+    espressoVersion = "3.5.1"
+
+    //Rxjava
+    rxj2rxjava = '2.2.6'
+    rxj2rxandroid = '2.1.1'
+    rxrelay2 ="2.1.0"
+    rxKotlin ="2.3.0"
+
+    //Network y retro
+    retrofitVersion ="2.6.1"
+    rxJava2Adapter ="1.0.0"
+    loginInterceptor = "3.9.0"
+    moshiVersion = "2.9.0"
+
+    //Glide
+    glideVersion = "4.14.2"
+
+    //airbnb  lottie
+    airbnbLottieVersion = "3.1.0"
+
+    //Room
+    roomVersion = "2.5.2"
+
+    GsonVersion ="2.1.0"
+
+    //camaraX
+    camerax_version = "1.2.3"
+
+    //TensorFlow lite
+    tensorFlowVersion = "0.1.0"
+
+    //For instrumentation tests
+    jUnit = "4.13.2"
+    assertJVersion = "3.8.0"
+    mockitoCore = "3.10.0"
+    mockitokotlin2Version ="2.2.0"
+    mockitoInLine= "2.8.47"
+
+    //JetpackCompose
+    JetpackComposeVersion = "1.4.0"
+    activityComposeVersion = "1.4.0"
+    composeNavigation = "2.7.5"
+    viewModelComposeVersion = "2.6.2"
+    coilCompose = "2.4.0"
+}

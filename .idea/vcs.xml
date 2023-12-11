@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Couponts" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/CoupontsOld" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/DogeDex" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/LoginRetrofit" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/MDC_JC" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Snapshots" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/SnapshotsOld" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/Weather" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/WeatherOld)" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/laboratorios/codelab-android-workmanager-advanced" vcs="Git" />
+  </component>
+</project>

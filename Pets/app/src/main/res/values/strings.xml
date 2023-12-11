@@ -1,0 +1,51 @@
+<resources>
+    <string name="app_name">Pets</string>
+    <string name="title">Pets</string>
+    <string name="link_Salir">go out</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="link_Reg">Register</string>
+    <string name="login_enter">Enter</string>
+    <string name="link_Visintante">Enter reader email</string>
+    <string name="link_comeback">Come Back</string>
+    <string name="title_userRegister">User Register</string>
+    <string name="Description_pet">Description Pet</string>
+    <string name="name_pet">Title NamePet</string>
+    <string name="description_img">the image news</string>
+    <string name="link_Compartir">To Share</string>
+    <string name="text_pet_prueba">
+        In Mexico it is usual to eat this soup at night, and it is classic in the national
+        holidays or during the cold winter nights; although some families also prepare this
+        delicious dish during the end of the year celebrations.
+
+        The original pozole is prepared with dry cacahuazintle corn and part of the and salt to taste.
+        Add the sauce to the broth, bring to a boil and add the meat. After 10 minutes, add the corn
+        and season with salt and pepper.
+
+        Serve your red pozole in a pozole dish and place the garnish on the side.
+
+        Bon Apetit!
+    </string>
+    <string name="title_Pet_Register">Pet Register</string>
+    <string name="title_add_pet">Add Pet</string>
+    <string name="save">Save</string>
+    <string name="hint_email">Email:</string>
+    <string name="hint_password">Password:</string>
+    <string name="hint_name">Name:</string>
+    <string name="hint_type">Type:</string>
+    <string name="hint_raza">Raza:</string>
+    <string name="hint_obs">Observations:</string>
+    <string name="hint_first_name">First Name:</string>
+    <string name="hint_last_name">Last Name:</string>
+    <string name="hint_repeat_password">Repeat password:</string>
+
+    <!-- message  -->
+    <string name="msg_password_invalid">the username or password is invalid</string>
+    <string name="msg_error_register">an exception occurred, please try again</string>
+    <string name="msg_error_user">an exception occurred</string>
+    <string name="msg_success_register">Successful registration</string>
+    <string name="msg_share_text">Share PETS</string>
+
+
+
+</resources>
