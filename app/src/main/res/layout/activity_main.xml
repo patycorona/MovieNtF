@@ -6,15 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".ui.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/app_name"
-        android:textColor="@color/red"
-        android:textSize="@dimen/txt_size_50sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/Fragment_principal"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_0dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@color/white"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
