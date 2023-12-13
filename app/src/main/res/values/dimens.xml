@@ -2,6 +2,7 @@
 <resources>
 
     <dimen name="spacing_0dp">0dp</dimen>
+    <dimen name="space_2dp">2dp</dimen>
     <dimen name="space_5dp">5dp</dimen>
     <dimen name="space_8dp">8dp</dimen>
     <dimen name="space_10dp">10dp</dimen>
@@ -26,5 +27,7 @@
     <dimen name="txt_size_35sp">35sp</dimen>
     <dimen name="txt_size_40sp">40sp</dimen>
     <dimen name="txt_size_50sp">50sp</dimen>
+    <dimen name="space_250dp">250dp</dimen>
+
 
 </resources>

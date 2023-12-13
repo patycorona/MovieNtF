@@ -8,6 +8,7 @@ import com.example.movientf.R
 import com.example.movientf.databinding.ActivitySplashBinding
 import com.example.movientf.domain.model.ConstantGeneral.Companion.URI_RESOURCE
 import com.example.movientf.ui.MainActivity
+import com.example.movientf.ui.presentation.PresentationActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 
@@ -36,7 +37,7 @@ class SplashActivity : AppCompatActivity() {
     }
 
     private fun startActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
+        startActivity(Intent(this, PresentationActivity::class.java))
         finish()
     }
 }
