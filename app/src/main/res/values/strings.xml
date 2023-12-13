@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">MovieNtf</string>
     <string name="title">MOVIENTF</string>
+    <string name="inicial_icon">N</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blan_fragment">Hello blank fragment</string>
     <string name="txt_iniciar_sesion">Inicia sesión</string>
@@ -14,7 +15,19 @@
     <string name="lbl_privacidad">Privacidad</string>
     <string name="msg_error">Un error ha ocurrido</string>
     <string name="lbl_bienvenido">Bienvenido</string>
+    <string name="lbl_inicia_sesion">INICIA SESIÓN</string>
     <string name="msg_token_error">Error en token</string>
     <string name="msg_is_null_or_empty">el Usuario o contraseña son incorrectos</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_comienza">Comienza ya</string>
+    <string name="lbl_msg1_f1">Series y películas\nilimitadas y\nmucho más</string>
+    <string name="lbl_msg2_f1">Disfruta donde quieras.\nCancela cuando quieras.</string>
+    <string name="lbl_msg1_f2">Cancela online\ncuando quieras</string>
+    <string name="lbl_msg2_f2">Únete hoy, no hay motivos\npara esperar.</string>
+    <string name="lbl_msg1_f3">Disfruta\ndonde quieras</string>
+    <string name="lbl_msg2_f3">Ve contenido en tu teléfono,\ntablet, computadora y tv.</string>
+    <string name="lbl_msg1_f4">Hay un plan \npara cada fan</string>
+    <string name="lbl_msg2_f4">planes desde $99.</string>
 
 </resources>
