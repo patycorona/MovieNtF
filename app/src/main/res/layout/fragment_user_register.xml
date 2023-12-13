@@ -70,7 +70,7 @@
         android:id="@+id/btn_registrar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Comienza Ya"
+        android:text="@string/txt_comienza"
         android:textSize="@dimen/txt_size_16sp"
         android:textColor="@color/white"
         android:gravity="center_horizontal"

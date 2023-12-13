@@ -3,7 +3,12 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="red">#B00020</color>
-    <color name="color_primary">#E0C8C8</color>
+    <color name="orange">#F44336</color>
+    <color name="blue">#193BAA</color>
+    <color name="dark_blue">#142355</color>
+    <color name="blue_trasparence">#60130442</color>
+
+    <color name="color_primary">#F44336</color>
     <color name="colorPrimaryDark">#201E1E</color>
     <color name="colorSecondary">#201E1E</color>
     <color name="colorSecondaryDark">#201E1E</color>

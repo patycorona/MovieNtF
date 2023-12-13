@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.viewpager2.widget.ViewPager2
+        android:id="@+id/pager"
+        app:layout_constraintVertical_weight="@integer/min_lines"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/spacing_0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+    <TextView
+        android:id="@+id/tv_inicial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/inicial_icon"
+        android:textColor="@color/red"
+        android:textSize="@dimen/txt_size_50sp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/space_15dp"
+        android:layout_marginTop="@dimen/space_10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_privaciada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_privacidad"
+        android:textSize="@dimen/txt_size_16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/space_30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/tv_ir_login"
+        app:layout_constraintStart_toEndOf="@id/tv_inicial" />
+
+    <TextView
+        android:id="@+id/tv_ir_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/lbl_inicia_sesion"
+        android:textSize="@dimen/txt_size_16sp"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/space_30dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/tv_privaciada" />
+
+    <com.google.android.material.tabs.TabLayout
+        android:elevation="@dimen/space_8dp"
+        android:id="@+id/tab_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/space_20dp"
+        app:tabIndicatorColor="@color/material_on_background_disabled"
+        android:backgroundTint="@android:color/transparent"
+        app:tabBackground="@android:color/transparent"
+        android:layout_marginBottom="@dimen/space_10dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_comenzar"
+        app:layout_constraintEnd_toEndOf="@+id/pager"
+        app:layout_constraintStart_toStartOf="parent" >
+    </com.google.android.material.tabs.TabLayout>
+    
+    <TextView
+        android:elevation="@dimen/space_8dp"
+        android:id="@+id/btn_comenzar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_btn_orange"
+        android:text="@string/txt_comienza"
+        android:textSize="@dimen/txt_size_16sp"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/space_8dp"
+        android:layout_marginBottom="@dimen/space_15dp"
+        android:layout_marginStart="@dimen/space_20dp"
+        android:layout_marginEnd="@dimen/space_20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/pager"
+        app:layout_constraintStart_toStartOf="parent"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
