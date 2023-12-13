@@ -26,5 +26,6 @@
     <dimen name="txt_size_35sp">35sp</dimen>
     <dimen name="txt_size_40sp">40sp</dimen>
     <dimen name="txt_size_50sp">50sp</dimen>
+    <dimen name="space_220dp">220dp</dimen>
 
 </resources>

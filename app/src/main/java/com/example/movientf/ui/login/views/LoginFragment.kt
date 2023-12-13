@@ -58,6 +58,10 @@ class LoginFragment : Fragment() {
                     Toast.makeText(requireContext(),R.string.msg_is_null_or_empty.toString() , Toast.LENGTH_SHORT).show()
                 }
             }
+            tvSuscribete.setOnClickListener {
+                (activity as MainActivity)
+                    .changeScreen(Screen.UserRegisterFragment)
+            }
 
             tvNameApp.setOnClickListener{
                 (activity as MainActivity)

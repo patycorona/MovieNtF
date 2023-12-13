@@ -8,6 +8,7 @@ import com.example.movientf.R
 import com.example.movientf.databinding.ActivityMainBinding
 import com.example.movientf.ui.component.Screen
 import com.example.movientf.ui.login.views.LoginFragment
+import com.example.movientf.ui.register.UserRegisterFragment
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -38,6 +39,9 @@ class MainActivity : AppCompatActivity() {
                 Screen.MainActivity -> {
                     initListener()
                 }
+                Screen.UserRegisterFragment -> {
+                    openUserRegisterFragment()
+                }
             }
         }
 
@@ -51,6 +55,10 @@ class MainActivity : AppCompatActivity() {
 
     private fun openLoginFragment() {
         changeFragment(LoginFragment.newInstance())
+    }
+
+    private fun openUserRegisterFragment(){
+        changeFragment(UserRegisterFragment.newInstance())
     }
 
 
