@@ -6,5 +6,4 @@ enum class Screen(val type: String) {
     LoginFragment("LoginFragment"),
     UserRegisterFragment("UserRegisterFragment"),
     PresentationActivity("PresentationActivity")
-
 }

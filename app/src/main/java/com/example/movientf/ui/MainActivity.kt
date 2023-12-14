@@ -59,7 +59,7 @@ class MainActivity : AppCompatActivity() {
         changeFragment(LoginFragment.newInstance())
     }
 
-    fun openUserRegisterFragment(){
+    private fun openUserRegisterFragment(){
         changeFragment(UserRegisterFragment.newInstance())
     }
 
