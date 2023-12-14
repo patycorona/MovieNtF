@@ -12,8 +12,10 @@ import com.example.movientf.databinding.ActivityPresentationBinding
 import com.example.movientf.domain.model.ConstantGeneral.Companion.ONE
 import com.example.movientf.domain.model.ConstantGeneral.Companion.THREE
 import com.example.movientf.domain.model.ConstantGeneral.Companion.TWO
+import com.example.movientf.domain.model.ConstantGeneral.Companion.USER_REG
 import com.example.movientf.domain.model.ConstantGeneral.Companion.ZERO
 import com.example.movientf.ui.MainActivity
+import com.example.movientf.ui.component.Screen
 import com.example.movientf.ui.presentation.views.adapter.ViewPagerAdapter
 import com.google.android.material.tabs.TabLayoutMediator
 import dagger.hilt.android.AndroidEntryPoint
@@ -61,9 +63,15 @@ class PresentationActivity : AppCompatActivity() {
             }
 
             btnComenzar.setOnClickListener {
-                startActivity()
+                openFragment(Screen.UserRegisterFragment)
             }
         }
+    }
+
+    private fun openFragment( type : Screen){
+        val intent = Intent(this, MainActivity::class.java)
+        intent.putExtra(USER_REG,type)
+        startActivity(intent)
     }
 
     private fun startActivity() {

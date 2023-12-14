@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.movientf.R
 import com.example.movientf.databinding.ActivityMainBinding
+import com.example.movientf.domain.model.ConstantGeneral.Companion.USER_REG
 import com.example.movientf.ui.component.Screen
 import com.example.movientf.ui.login.views.LoginFragment
 import com.example.movientf.ui.register.UserRegisterFragment
@@ -21,7 +22,11 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        changeScreen(Screen.LoginFragment)
+
+        var type = intent?.extras?.getString(USER_REG)!!
+        if(type == null)
+            changeScreen(Screen.LoginFragment)
+       // else  changeScreen(type)
     }
 
 
