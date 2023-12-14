@@ -1,5 +1,6 @@
 package com.example.movientf.ui
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,6 +10,7 @@ import com.example.movientf.databinding.ActivityMainBinding
 import com.example.movientf.domain.model.ConstantGeneral.Companion.USER_REG
 import com.example.movientf.ui.component.Screen
 import com.example.movientf.ui.login.views.LoginFragment
+import com.example.movientf.ui.presentation.PresentationActivity
 import com.example.movientf.ui.register.UserRegisterFragment
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -24,24 +26,24 @@ class MainActivity : AppCompatActivity() {
 
 
         var type = intent?.extras?.getString(USER_REG)!!
-        if(type == null)
-            changeScreen(Screen.LoginFragment)
-       // else  changeScreen(type)
+        changeScreen(type)
     }
 
-
-    fun changeScreen(typeScreen: Screen) {
+    fun changeScreen(type :String) {
 
         binding.apply {
-            when(typeScreen){
-                Screen.LoginFragment -> {
+            when(type){
+                Screen.LoginFragment.toString()-> {
                     openLoginFragment()
                 }
-                Screen.MainActivity -> {
+                Screen.MainActivity.toString() -> {
                     openLoginFragment()
                 }
-                Screen.UserRegisterFragment -> {
+                Screen.UserRegisterFragment.toString() -> {
                     openUserRegisterFragment()
+                }
+                Screen.PresentationActivity.toString() -> {
+                    startActivity()
                 }
             }
         }
@@ -59,5 +61,10 @@ class MainActivity : AppCompatActivity() {
 
     fun openUserRegisterFragment(){
         changeFragment(UserRegisterFragment.newInstance())
+    }
+
+    private fun startActivity() {
+        startActivity(Intent(this, PresentationActivity::class.java))
+        finish()
     }
 }

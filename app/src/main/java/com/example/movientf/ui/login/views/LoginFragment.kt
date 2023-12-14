@@ -60,12 +60,12 @@ class LoginFragment : Fragment() {
             }
             tvSuscribete.setOnClickListener {
                 (activity as MainActivity)
-                    .changeScreen(Screen.UserRegisterFragment)
+                    .changeScreen(Screen.UserRegisterFragment.toString())
             }
 
             tvNameApp.setOnClickListener{
                 (activity as MainActivity)
-                    .changeScreen(Screen.MainActivity)
+                    .changeScreen(Screen.LoginFragment.toString())
             }
         }
     }

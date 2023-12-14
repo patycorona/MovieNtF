@@ -56,26 +56,22 @@ class PresentationActivity : AppCompatActivity() {
             tabLayoutMediator.attach()
 
             tvIrLogin.setOnClickListener {
-               startActivity()
+                openFragment(Screen.LoginFragment.toString())
             }
             tvPrivaciada.setOnClickListener {
                 Toast.makeText(this@PresentationActivity, R.string.lbl_privacidad, Toast.LENGTH_SHORT).show()
             }
 
             btnComenzar.setOnClickListener {
-                openFragment(Screen.UserRegisterFragment)
+                openFragment(Screen.UserRegisterFragment.toString())
             }
         }
     }
 
-    private fun openFragment( type : Screen){
+    private fun openFragment( type : String){
         val intent = Intent(this, MainActivity::class.java)
         intent.putExtra(USER_REG,type)
         startActivity(intent)
     }
 
-    private fun startActivity() {
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
-    }
 }

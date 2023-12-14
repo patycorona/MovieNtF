@@ -1,5 +1,6 @@
 package com.example.movientf.ui.register
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -15,6 +16,7 @@ import com.example.movientf.domain.model.ResultModel
 import com.example.movientf.ui.MainActivity
 import com.example.movientf.ui.component.Screen
 import com.example.movientf.ui.login.viewmodel.LoginViewModel
+import com.example.movientf.ui.presentation.PresentationActivity
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -55,7 +57,7 @@ class UserRegisterFragment : Fragment() {
 
             tvCerrar?.setOnClickListener {
                 (activity as MainActivity)
-                    .changeScreen(Screen.LoginFragment)
+                    .changeScreen(Screen.PresentationActivity.toString())
             }
         }
     }
