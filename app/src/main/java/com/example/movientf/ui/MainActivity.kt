@@ -21,13 +21,9 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        initListener()
         changeScreen(Screen.LoginFragment)
     }
 
-    private fun initListener() {
-
-    }
 
     fun changeScreen(typeScreen: Screen) {
 
@@ -37,14 +33,13 @@ class MainActivity : AppCompatActivity() {
                     openLoginFragment()
                 }
                 Screen.MainActivity -> {
-                    initListener()
+                    openLoginFragment()
                 }
                 Screen.UserRegisterFragment -> {
                     openUserRegisterFragment()
                 }
             }
         }
-
     }
 
     private fun changeFragment(fragment: Fragment) {
@@ -57,9 +52,7 @@ class MainActivity : AppCompatActivity() {
         changeFragment(LoginFragment.newInstance())
     }
 
-    private fun openUserRegisterFragment(){
+    fun openUserRegisterFragment(){
         changeFragment(UserRegisterFragment.newInstance())
     }
-
-
 }

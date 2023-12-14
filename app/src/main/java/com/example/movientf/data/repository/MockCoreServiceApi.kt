@@ -2,6 +2,7 @@ package com.example.movientf.data.repository
 
 import com.example.movientf.data.model.request.UserRequest
 import com.example.movientf.data.model.response.LoginResponse
+import com.example.movientf.data.model.response.ResultResponse
 import io.reactivex.Single
 
 class MockCoreServiceApi {
@@ -22,4 +23,16 @@ class MockCoreServiceApi {
             token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJwdWJsaWNfaWQiOiJhY2FkNWQ4Yy00MDg1LTQ0NmUtYmEzNy1kOTExMTk0NjM4NmYiLCJleHAiOjE3MDIzNDIxNzd9.z00IU0qLY7s-iwcgja6zDNE10Un7b8gdP6903M-aEws"
         )
     )
+
+    fun mockSendEmail() = Single.just(
+
+        ResultResponse(
+            code = "0",
+            message = "successfull",
+        )
+    )
+
+
+
+
 }

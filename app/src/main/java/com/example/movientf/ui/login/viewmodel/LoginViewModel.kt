@@ -5,8 +5,10 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.movientf.R
 import com.example.movientf.data.model.request.LoginRequest
+import com.example.movientf.data.model.request.SendEmailRequest
 import com.example.movientf.domain.model.ConstantGeneral.Companion.ERROR
 import com.example.movientf.domain.model.LoginResultModel
+import com.example.movientf.domain.model.ResultModel
 import com.example.movientf.domain.model.UserModel
 import com.example.movientf.domain.usecase.DataStoreUseCase
 import com.example.movientf.domain.usecase.LoginUseCase
@@ -30,6 +32,9 @@ class LoginViewModel @Inject constructor(
 
     val loginResultModel: MutableLiveData<LoginResultModel> by lazy {
         MutableLiveData<LoginResultModel>()
+    }
+    val resultModel: MutableLiveData<ResultModel> by lazy {
+        MutableLiveData<ResultModel>()
     }
 
     val getName_token: MutableLiveData<String> by lazy {
@@ -69,6 +74,22 @@ class LoginViewModel @Inject constructor(
                         message = R.string.msg_error.toString(),
                         user = UserModel(),
                         token = R.string.msg_token_error.toString()
+                    )
+                )
+            })
+    }
+
+    fun sendEmail(email: String){
+        val sendEmailRequest = SendEmailRequest(email = email)
+        compositeDisposable += loginUseCase.sendEmail(sendEmailRequest)
+            .subscribeOn(Schedulers.io())
+            .subscribe({ RM ->
+                resultModel.postValue(RM)
+            }, {
+                resultModel.postValue(
+                    ResultModel(
+                        code = ERROR,
+                        message = R.string.msg_error.toString(),
                     )
                 )
             })

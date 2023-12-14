@@ -59,6 +59,10 @@ class PresentationActivity : AppCompatActivity() {
             tvPrivaciada.setOnClickListener {
                 Toast.makeText(this@PresentationActivity, R.string.lbl_privacidad, Toast.LENGTH_SHORT).show()
             }
+
+            btnComenzar.setOnClickListener {
+                startActivity()
+            }
         }
     }
 
