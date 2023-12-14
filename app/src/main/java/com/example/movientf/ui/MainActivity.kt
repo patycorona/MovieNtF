@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentTransaction
 import com.example.movientf.R
 import com.example.movientf.databinding.ActivityMainBinding
+import com.example.movientf.domain.model.UserModel
 import com.example.movientf.ui.component.Screen
 import com.example.movientf.ui.login.views.LoginFragment
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,14 +22,14 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         initListener()
-        changeScreen(Screen.LoginFragment)
+        changeScreen(Screen.LoginFragment, userModel())
     }
 
     private fun initListener() {
 
     }
 
-    fun changeScreen(typeScreen: Screen) {
+    fun changeScreen(typeScreen: Screen,  userModel: UserModel? = UserModel()) {
 
         binding.apply {
             when(typeScreen){
@@ -38,6 +39,8 @@ class MainActivity : AppCompatActivity() {
                 Screen.MainActivity -> {
                     initListener()
                 }
+
+                else -> { openLoginFragment()}
             }
         }
 

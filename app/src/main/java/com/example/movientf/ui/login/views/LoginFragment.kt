@@ -61,7 +61,7 @@ class LoginFragment : Fragment() {
 
             tvNameApp.setOnClickListener{
                 (activity as MainActivity)
-                    .changeScreen(Screen.MainActivity)
+                    .changeScreen(Screen.MainActivity, userModel)
             }
         }
     }
@@ -78,6 +78,9 @@ class LoginFragment : Fragment() {
             token = loginResultM.token
 
             Toast.makeText(requireContext(), R.string.lbl_bienvenido, Toast.LENGTH_SHORT).show()
+
+            (activity as MainActivity)
+                .changeScreen(Screen.HomeProfileFragment, userModel)
         } else {
             Toast.makeText(requireContext(), R.string.msg_error, Toast.LENGTH_LONG).show()
         }
