@@ -29,10 +29,8 @@ class LoginFragment : Fragment() {
     var userModel: UserModel? = UserModel()
     var token: String = ""
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -58,10 +56,15 @@ class LoginFragment : Fragment() {
                     Toast.makeText(requireContext(),R.string.msg_is_null_or_empty.toString() , Toast.LENGTH_SHORT).show()
                 }
             }
+            tvSuscribete.setOnClickListener {
+                (activity as MainActivity)
+                    .changeScreen(Screen.UserRegisterFragment.toString())
+            }
 
             tvNameApp.setOnClickListener{
                 (activity as MainActivity)
-                    .changeScreen(Screen.MainActivity, userModel)
+                    .changeScreen(Screen.LoginFragment.toString())
+
             }
         }
     }
@@ -80,7 +83,7 @@ class LoginFragment : Fragment() {
             Toast.makeText(requireContext(), R.string.lbl_bienvenido, Toast.LENGTH_SHORT).show()
 
             (activity as MainActivity)
-                .changeScreen(Screen.HomeProfileFragment, userModel)
+                .changeScreen(Screen.HomeProfileFragment.toString(), token)
         } else {
             Toast.makeText(requireContext(), R.string.msg_error, Toast.LENGTH_LONG).show()
         }

@@ -12,6 +12,7 @@ class ConstantGeneral {
         const val URI_RESOURCE = "android.resource://"
         const val VIEW_PAGER_NUM = 4
         const val ARG_OBJECT = "object"
+        const val USER_REG = "registrarse"
     }
 
 }

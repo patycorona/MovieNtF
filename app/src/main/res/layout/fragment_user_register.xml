@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/space_8dp"
+    tools:context=".ui.register.UserRegisterFragment">
+
+    <TextView
+        android:id="@+id/lbl_question"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_question"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/txt_size_40sp"
+        android:layout_marginTop="@dimen/space_80dp"
+        android:layout_marginStart="@dimen/space_20dp"
+        android:layout_marginEnd="@dimen/space_20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/lbl_msg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_20dp"
+        android:layout_marginTop="@dimen/space_25dp"
+        android:layout_marginEnd="@dimen/space_20dp"
+        android:text="@string/txt_msg_inf"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="@dimen/txt_size_14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/lbl_question"
+        />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/ti_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/space_80dp"
+        android:layout_marginStart="@dimen/space_20dp"
+        android:layout_marginEnd="@dimen/space_20dp"
+        app:layout_constraintTop_toBottomOf="@id/lbl_msg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:backgroundTint="@color/colorPrimaryDark"
+        android:textColorHint="@color/colorPrimaryDark"
+        app:startIconDrawable="@drawable/ic_icon_email"
+        app:hintTextColor="@color/colorPrimaryDark"
+        android:hint="@string/hint_email">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/ed_userName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="@dimen/txt_size_18sp"
+            android:singleLine="true"
+            android:minLines="@integer/min_lines"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+
+    <TextView
+        android:id="@+id/btn_registrar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/txt_comienza"
+        android:textSize="@dimen/txt_size_16sp"
+        android:textColor="@color/white"
+        android:gravity="center_horizontal"
+        android:background="@drawable/bg_bottom_red"
+        android:padding="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_25dp"
+        android:layout_marginStart="@dimen/space_30dp"
+        android:layout_marginEnd="@dimen/space_30dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ti_email"/>
+
+    <TextView
+        android:id="@+id/tv_message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="@dimen/txt_size_16sp"
+        android:textColor="@color/colorPrimaryDark"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_25dp"
+        android:layout_marginStart="@dimen/space_30dp"
+        android:layout_marginEnd="@dimen/space_30dp"
+        app:layout_constraintTop_toBottomOf="@id/btn_registrar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/tv_cerrar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/text_cerrar"
+        android:textSize="@dimen/txt_size_24sp"
+        android:textColor="@color/divider"
+        android:padding="@dimen/space_8dp"
+        android:layout_marginTop="@dimen/space_10dp"
+        android:layout_marginEnd="@dimen/space_10dp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
