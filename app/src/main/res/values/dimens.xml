@@ -18,6 +18,8 @@
     <dimen name="space_120dp">120dp</dimen>
     <dimen name="space_180dp">180dp</dimen>
     <dimen name="space_190dp">190dp</dimen>
+    <dimen name="space_220dp">220dp</dimen>
+    <dimen name="space_250dp">250dp</dimen>
 
     <dimen name="txt_size_12sp">12sp</dimen>
     <dimen name="txt_size_14sp">14sp</dimen>
@@ -27,7 +29,6 @@
     <dimen name="txt_size_35sp">35sp</dimen>
     <dimen name="txt_size_40sp">40sp</dimen>
     <dimen name="txt_size_50sp">50sp</dimen>
-    <dimen name="space_250dp">250dp</dimen>
 
 
 </resources>
