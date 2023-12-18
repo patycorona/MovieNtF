@@ -6,5 +6,5 @@ import io.reactivex.Single
 
 interface ProfileRepository {
 
-    fun addProfile(profileRequest: ProfileRequest): Single<ResultModel>
+    fun addProfile(token:String, profileRequest: ProfileRequest, id_client:String): Single<ResultModel>
 }

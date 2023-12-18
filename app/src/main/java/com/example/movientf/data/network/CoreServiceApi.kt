@@ -11,6 +11,7 @@ import retrofit2.http.GET
 import retrofit2.http.Header
 import retrofit2.http.Headers
 import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface CoreServiceApi {
 
@@ -20,10 +21,13 @@ interface CoreServiceApi {
     @POST("/auth/send-email")
     @Headers("Content-Type: application/json ")
     fun sendEmail(@Body sendEmailRequest: SendEmailRequest): Single<ResultResponse>
-    @POST("/profile_method")
+    @POST("/profile_method/{id_client}")
     @Headers("Content-Type: application/json ")
-    fun addProfile(@Header("Authorization") authorization:String, @Body profileRequest: ProfileRequest): Single<ResultResponse>
-    @GET("/profile_method")
+    fun addProfile(@Header("Authorization") authorization:String,
+                   @Path("id_client") id_client:String,
+                   @Body profileRequest: ProfileRequest): Single<ResultResponse>
+    @GET("/profile_method/{id_client}")
     @Headers("Content-Type: application/json ")
-    fun getProfile(@Header("Authorization") authorization:String): Single<ResultResponse>
+    fun getProfile(@Header("Authorization") authorization:String,
+                   @Path ("id_client") id_client:String): Single<ResultResponse>
 }

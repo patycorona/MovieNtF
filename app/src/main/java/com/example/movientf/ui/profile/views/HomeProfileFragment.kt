@@ -12,6 +12,9 @@ import androidx.recyclerview.widget.GridLayoutManager
 import com.example.movientf.R
 import com.example.movientf.databinding.FragmentHomeProfileBinding
 import com.example.movientf.domain.model.ConstantGeneral
+import com.example.movientf.domain.model.ConstantGeneral.Companion.ADD_PROFILE
+import com.example.movientf.domain.model.ConstantGeneral.Companion.GET_PROFILE
+import com.example.movientf.domain.model.ConstantGeneral.Companion.HOME
 import com.example.movientf.domain.model.ConstantGeneral.Companion.TWO
 import com.example.movientf.domain.model.ResultModel
 import com.example.movientf.ui.profile.viewmodel.ProfileViewModel
@@ -23,8 +26,8 @@ class HomeProfileFragment (
     ): Fragment() {
 
     var binding: FragmentHomeProfileBinding? = null
-
     private val profileViewModel: ProfileViewModel by viewModels()
+    private var process:String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +58,21 @@ class HomeProfileFragment (
 
     private var ProfileResultObserver = Observer<ResultModel> { ResModel ->
         if (ResModel.code == ConstantGeneral.CODE_OK) {
-            Toast.makeText(requireContext(), R.string.msg_success, Toast.LENGTH_LONG).show()
+            when(process){
+                HOME -> {
+                    Toast.makeText(requireContext(), "Selecciona una peli", Toast.LENGTH_LONG)
+                        .show()
+                }
+                GET_PROFILE -> {
+                    Toast.makeText(requireContext(), "Estos son todos los perfiles", Toast.LENGTH_LONG).show()
+                }
+                ADD_PROFILE -> {
+                    Toast.makeText(requireContext(), R.string.msg_success, Toast.LENGTH_LONG).show()
+                }
+
+            }
+
+
             //Cuando se Registre correctamente debera mostrarse en el grid
         }else{
             Toast.makeText(requireContext(), R.string.msg_error, Toast.LENGTH_LONG).show()

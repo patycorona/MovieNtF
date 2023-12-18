@@ -8,18 +8,19 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.engine.DiskCacheStrategy
 import com.example.movientf.databinding.FragmentProfileItemBinding
+import com.example.movientf.domain.model.ConstantGeneral.Companion.HOME
 import com.example.movientf.domain.model.ProfileModel
 
 class ProfileAdapter (
     private val dataSource: MutableList<ProfileModel>,
-    var onItemClickListener: ((profileModel: ProfileModel) -> Unit),
+    var onItemClickListener: ((profileModel: ProfileModel, type:String) -> Unit),
     val context: Context
     ) : RecyclerView.Adapter<ProfileAdapter.ViewHolder>(){
 
     inner class ViewHolder(
         private var binding: FragmentProfileItemBinding,
         private var ctx: Context,
-        var onItemClickListener: ((profileModel: ProfileModel) -> Unit)
+        var onItemClickListener: ((profileModel: ProfileModel, type:String) -> Unit)
     ) : RecyclerView.ViewHolder(binding!!.root)
     {
         var root: ConstraintLayout = binding.layoutItemProfile
@@ -37,7 +38,7 @@ class ProfileAdapter (
             binding?.layoutItemProfile?.setOnClickListener {
 
                 onItemClickListener.invoke(
-                    dataSource)
+                    dataSource, HOME)
             }
         }
     }

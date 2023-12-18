@@ -9,6 +9,6 @@ import javax.inject.Inject
 class ProfileUseCase @Inject constructor(
     var profileRepository : ProfileRepository
 ){
-    fun addProfile(profileRequest: ProfileRequest): Single<ResultModel> =
-        profileRepository.addProfile(profileRequest)
+    fun addProfile(token:String, profileRequest: ProfileRequest, id_client:String): Single<ResultModel> =
+        profileRepository.addProfile(token, profileRequest, id_client)
 }

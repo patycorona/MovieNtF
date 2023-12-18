@@ -13,9 +13,10 @@ class DataStoreUseCase @Inject constructor(
 
     fun getToken() = DataStoreRepository.getToken()
 
-    suspend fun setName(name: String) {
-        DataStoreRepository.setName(name)
+    suspend fun setIdClient(idClient: String) {
+        DataStoreRepository.setIdClient(idClient)
     }
 
-    fun getName() = DataStoreRepository.getName()
+    fun getIdClient() = DataStoreRepository.getIdClient()
+
 }

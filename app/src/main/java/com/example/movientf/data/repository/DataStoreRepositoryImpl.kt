@@ -7,7 +7,7 @@ import com.example.movientf.data.database.writeString
 class DataStoreRepositoryImpl: DataStoreRepository {
 
     companion object {
-        const val NAME_USER_KEY = "NAME_USER_KEY"
+        const val ID_CLIENT = "ID_CLIENT"
         const val SHARED_TOKEN = "TOKEN"
     }
 
@@ -17,10 +17,10 @@ class DataStoreRepositoryImpl: DataStoreRepository {
 
     override fun getToken() = appContext.readString(SHARED_TOKEN)
 
-    override suspend fun setName(name: String) {
-        appContext.writeString(NAME_USER_KEY, name)
+    override suspend fun setIdClient(idClient: String) {
+        appContext.writeString(ID_CLIENT, idClient)
     }
 
-    override fun getName() = appContext.readString(NAME_USER_KEY)
+    override fun getIdClient() = appContext.readString(ID_CLIENT)
 
 }

@@ -37,25 +37,25 @@ class LoginViewModel @Inject constructor(
         MutableLiveData<ResultModel>()
     }
 
-    val getName_token: MutableLiveData<String> by lazy {
+    val getIdClient_token: MutableLiveData<String> by lazy {
         MutableLiveData<String>()
     }
 
     fun getPrefDataStore() {
         viewModelScope.launch {
-            dataStoreUseCase.getName()
+            dataStoreUseCase.getIdClient()
                 .zip(dataStoreUseCase.getToken()) { first, second ->
                     return@zip "$first - $second"
                 }
                 .flowOn(Dispatchers.IO)
                 .collect {
-                    getName_token.value = it
+                    getIdClient_token.value = it
                 }
         }
     }
 
-    suspend fun setPrefDatStore(name: String, token: String) {
-        dataStoreUseCase.setName(name)
+    suspend fun setPrefDatStore(idClient: String, token: String) {
+        dataStoreUseCase.setIdClient(idClient)
         dataStoreUseCase.setToken(token)
     }
 

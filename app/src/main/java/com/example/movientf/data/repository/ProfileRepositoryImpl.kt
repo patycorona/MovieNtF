@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class ProfileRepositoryImpl @Inject constructor(var mockCoreServiceApi: MockCoreServiceApi, ) : ProfileRepository {
 
-    override fun addProfile(profileRequest: ProfileRequest): Single<ResultModel> =
+    override fun addProfile(token:String,profileRequest: ProfileRequest, id_client:String): Single<ResultModel> =
         mockCoreServiceApi.mockSendEmail()
 
             .map { resulResponse ->

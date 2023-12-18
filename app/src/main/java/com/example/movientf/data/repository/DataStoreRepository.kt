@@ -6,5 +6,6 @@ interface DataStoreRepository {
 
     suspend fun setToken(token :String)  fun getToken(): Flow<String>
 
-    suspend fun setName(name: String) fun getName(): Flow<String>
+    suspend fun setIdClient(idClient: String) fun getIdClient(): Flow<String>
+
 }

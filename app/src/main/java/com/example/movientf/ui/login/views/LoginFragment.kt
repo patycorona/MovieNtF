@@ -73,8 +73,7 @@ class LoginFragment : Fragment() {
         if (loginResultM.code == CODE_OK) {
 
             CoroutineScope(Dispatchers.Default).launch {
-                loginViewModel.setPrefDatStore(loginResultM.user.name + " "+
-                        loginResultM.user.last_name, loginResultM.token)
+                loginViewModel.setPrefDatStore(loginResultM.token, loginResultM.user.id_client)
             }
 
             userModel = loginResultM.user

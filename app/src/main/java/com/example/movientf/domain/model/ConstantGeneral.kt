@@ -13,6 +13,9 @@ class ConstantGeneral {
         const val VIEW_PAGER_NUM = 4
         const val ARG_OBJECT = "object"
         const val USER_REG = "registrarse"
+        const val HOME = "home"
+        const val GET_PROFILE = "get_profile"
+        const val ADD_PROFILE = "add_profile"
     }
 
 }
