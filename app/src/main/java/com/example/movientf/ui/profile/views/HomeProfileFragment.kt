@@ -16,22 +16,49 @@ import com.example.movientf.domain.model.ConstantGeneral.Companion.ADD_PROFILE
 import com.example.movientf.domain.model.ConstantGeneral.Companion.GET_PROFILE
 import com.example.movientf.domain.model.ConstantGeneral.Companion.HOME
 import com.example.movientf.domain.model.ConstantGeneral.Companion.TWO
+import com.example.movientf.domain.model.ProfileModel
+import com.example.movientf.domain.model.ProfileResult
 import com.example.movientf.domain.model.ResultModel
 import com.example.movientf.ui.profile.viewmodel.ProfileViewModel
+import com.example.movientf.ui.profile.views.adapter.ProfileAdapter
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
 class HomeProfileFragment (
-    private var token : String??
+    private var token : String?
     ): Fragment() {
 
     var binding: FragmentHomeProfileBinding? = null
     private val profileViewModel: ProfileViewModel by viewModels()
     private var process:String = ""
+    private var idProduct: String = ""
+
+
+    private val listProfileObserver = Observer<ProfileResult> { profileResult ->
+        if (profileResult.sussess) {
+            profileResult.list_profile?.let {
+                val adapter = ProfileAdapter(
+                    it,
+                    onItemClickListener,
+                    requireContext()
+                )
+                binding?.recyclerview?.adapter = adapter
+                adapter.notifyDataSetChanged()
+            }
+        }
+    }
+
+    var onItemClickListener: ((profileModel: ProfileModel, type:String) -> Unit) = { profileModel, type ->
+        idProduct = profileModel.id
+        process = type
+
+        if(type == HOME )
+            Toast.makeText(requireContext(), "Bienvenido a HOME ${profileModel.user_name}", Toast.LENGTH_LONG)
+                .show()
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
     }
 
     override fun onCreateView(
@@ -43,8 +70,13 @@ class HomeProfileFragment (
             LayoutInflater.from(context), null ,false)
 
         initRecycler()
-
+        initObserver()
+        initListener()
         return binding?.root
+    }
+
+    private fun initListener(){
+
     }
 
     private fun initRecycler() {
@@ -69,9 +101,7 @@ class HomeProfileFragment (
                 ADD_PROFILE -> {
                     Toast.makeText(requireContext(), R.string.msg_success, Toast.LENGTH_LONG).show()
                 }
-
             }
-
 
             //Cuando se Registre correctamente debera mostrarse en el grid
         }else{
@@ -85,7 +115,8 @@ class HomeProfileFragment (
 
     private fun initObserver() {
         profileViewModel.resultModel.observe(viewLifecycleOwner, ProfileResultObserver)
-    }
+        profileViewModel.listProfileRM.observe(viewLifecycleOwner, listProfileObserver)
+   }
 
     companion object {
         @JvmStatic

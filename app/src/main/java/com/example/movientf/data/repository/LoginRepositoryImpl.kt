@@ -11,7 +11,7 @@ import javax.inject.Inject
 class LoginRepositoryImpl @Inject constructor(var mockCoreServiceApi: MockCoreServiceApi, ) :LoginRepository {
 
     override fun login(loginRequest: LoginRequest) : Single<LoginResultModel> =
-        mockCoreServiceApi.mocklogin()
+        mockCoreServiceApi.mockLogin()
 
             .map { loginResponse ->
                 loginResponse.toModel()

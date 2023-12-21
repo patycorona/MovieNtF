@@ -3,6 +3,7 @@ package com.example.movientf.platform.di.module
 import com.example.movientf.data.repository.DataStoreRepositoryImpl
 import com.example.movientf.data.repository.LoginRepositoryImpl
 import com.example.movientf.data.repository.MockCoreServiceApi
+import com.example.movientf.data.repository.ProfileRepositoryImpl
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,4 +21,7 @@ class RepositoryModule {
 
     @Provides
     fun mockRepositoryProvider(): MockCoreServiceApi = MockCoreServiceApi()
+
+    @Provides
+    fun profileRepositoryProvider(mockCoreServiceApi : MockCoreServiceApi): ProfileRepositoryImpl = ProfileRepositoryImpl(mockCoreServiceApi)
 }

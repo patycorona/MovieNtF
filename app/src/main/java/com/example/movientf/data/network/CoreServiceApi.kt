@@ -1,8 +1,11 @@
 package com.example.movientf.data.network
 
+import com.example.movientf.data.model.request.DeleteProfileRequest
 import com.example.movientf.data.model.request.LoginRequest
 import com.example.movientf.data.model.request.ProfileRequest
 import com.example.movientf.data.model.request.SendEmailRequest
+import com.example.movientf.data.model.request.UpdateProfileRequest
+import com.example.movientf.data.model.response.AllProfileResponse
 import com.example.movientf.data.model.response.LoginResponse
 import com.example.movientf.data.model.response.ResultResponse
 import io.reactivex.Single
@@ -29,5 +32,17 @@ interface CoreServiceApi {
     @GET("/profile_method/{id_client}")
     @Headers("Content-Type: application/json ")
     fun getProfile(@Header("Authorization") authorization:String,
-                   @Path ("id_client") id_client:String): Single<ResultResponse>
+                   @Path ("id_client") id_client:String): Single<AllProfileResponse>
+
+    @POST("/delete_product/{id_client}")
+    @Headers("ontent-Type: application/json ")
+    fun deleteProfile(@Header("Authorization") authorization:String,
+                      @Path ("id_client") id_client:String,
+                      @Body deleteProfileRequest: DeleteProfileRequest): Single<ResultResponse>
+
+    @POST("/delete_product/{id_client}")
+    @Headers("ontent-Type: application/json ")
+    fun updateProfile(@Header("Authorization") authorization:String,
+                      @Path ("id_client") id_client:String,
+                      @Body updateProfileRequest: UpdateProfileRequest): Single<ResultResponse>
 }

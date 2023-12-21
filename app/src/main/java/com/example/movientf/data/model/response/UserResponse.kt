@@ -3,7 +3,7 @@ package com.example.movientf.data.model.response
 import com.google.gson.annotations.SerializedName
 
 data class UserResponse(
-    @SerializedName("idClient") val id_client:String = "",
+    @SerializedName("id_client") val id_client:String = "",
     @SerializedName("email") val email: String = "",
     @SerializedName("name") val name: String = "",
     @SerializedName("last_name") val last_name: String = "",

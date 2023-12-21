@@ -10,9 +10,10 @@ internal fun LoginResponse.toModel() =
     LoginResultModel(code = code,
         message = message,
         user = UserModel(
-            email = userRequest.email,
-            name = userRequest.name,
-            last_name = userRequest.last_name),
+            id_client = userResponse.id_client,
+            email = userResponse.email,
+            name = userResponse.name,
+            last_name = userResponse.last_name),
         token = token)
 
 internal fun ResultResponse.toModel() =

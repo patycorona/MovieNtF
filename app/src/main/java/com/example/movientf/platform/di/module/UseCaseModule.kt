@@ -2,8 +2,10 @@ package com.example.movientf.platform.di.module
 
 import com.example.movientf.data.repository.DataStoreRepositoryImpl
 import com.example.movientf.data.repository.LoginRepositoryImpl
+import com.example.movientf.data.repository.ProfileRepositoryImpl
 import com.example.movientf.domain.usecase.DataStoreUseCase
 import com.example.movientf.domain.usecase.LoginUseCase
+import com.example.movientf.domain.usecase.ProfileUseCase
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -20,4 +22,8 @@ class UseCaseModule {
     @Provides
     fun dataStoreUseCaseProvider(dataStoreRepositoryImpl: DataStoreRepositoryImpl) =
         DataStoreUseCase(dataStoreRepositoryImpl)
+
+    @Provides
+    fun profileUseCaseProvider(pofileRepositoryImpl : ProfileRepositoryImpl) =
+        ProfileUseCase(pofileRepositoryImpl)
 }
